@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Login - TownCare</title>
+
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+  <div class="login-container">
+    <div class="left-section">
+      <div class="logo">TownCare</div>
+
+      <h2>Samudra Township, Connected.</h2>
+
+      <p>
+        Stay connected with your township. Manage visitors, raise complaints,
+        check maintenance bills and access important community services.
+      </p>
+
+      <div class="town-image">
+        <img src="../../images/client-login-image.jpg" alt="Samudra Township" />
+      </div>
+    </div>
+
+    <div class="right-section">
+      <h1>Welcome Back</h1>
+
+      <p class="welcome-text">Login to your TownCare account</p>
+
+      <div class="error-message" id="errorMessage">
+        Invalid house number, mobile number or password.
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="houseNumber"> House Number </label>
+
+          <select id="houseNumber" name="houseNumber" required>
+            <option value="" disabled selected>
+              Select your house number
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mobileNumber"> Mobile Number </label>
+
+          <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" maxlength="10"
+            required />
+        </div>
+
+        <div class="form-group">
+          <label for="password"> Password </label>
+
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+
+      <div class="divider">OR</div>
+
+      <p class="register-text">
+        New to TownCare?
+        <a href="register.html"> Create Account </a>
+      </p>
+    </div>
+  </div>
+
+  <script src="../js/login.js"></script>
+
+</body>
+
+</html>
