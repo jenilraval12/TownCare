@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Bills - TownCare</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/bills.css"
+  />
+
+</head>
+
+
+<body>
+
+
+  <!-- ==========================================
+       Sidebar Menu
+       ========================================== -->
+
+  <input
+    type="checkbox"
+    id="sidebarToggle"
+    class="sidebar-toggle"
+  />
+
+
+  <!-- Menu Button -->
+
+  <label
+    for="sidebarToggle"
+    class="menu-button"
+    aria-label="Open navigation menu"
+  >
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </label>
+
+
+  <!-- Overlay -->
+
+  <label
+    for="sidebarToggle"
+    class="sidebar-overlay"
+    aria-label="Close navigation menu"
+  ></label>
+
+
+  <!-- Sidebar -->
+
+  <aside
+    class="sidebar"
+    aria-label="TownCare admin navigation"
+  >
+
+    <div class="sidebar-header">
+
+      <div class="sidebar-logo">
+        TownCare
+      </div>
+
+
+      <label
+        for="sidebarToggle"
+        class="sidebar-close"
+        aria-label="Close navigation menu"
+      >
+        &times;
+      </label>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+
+      <!-- Dashboard -->
+
+      <a
+        href="dashboard.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          ⌂
+        </span>
+
+        <span>
+          Dashboard
+        </span>
+
+      </a>
+
+
+      <!-- Residents -->
+
+      <a
+        href="residents.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          👥
+        </span>
+
+        <span>
+          Residents
+        </span>
+
+      </a>
+
+
+      <!-- Complaints -->
+
+      <a
+        href="complaints.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          🔧
+        </span>
+
+        <span>
+          Complaints & Services
+        </span>
+
+      </a>
+
+
+      <!-- Bills -->
+
+      <a
+        href="bills.html"
+        class="sidebar-link active"
+      >
+
+        <span class="sidebar-icon">
+          ₹
+        </span>
+
+        <span>
+          Bills
+        </span>
+
+      </a>
+
+
+      <!-- Notices -->
+
+      <a
+        href="notices.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          📢
+        </span>
+
+        <span>
+          Notice Board
+        </span>
+
+      </a>
+
+
+      <!-- Logout -->
+
+      <a
+        href="#"
+        class="sidebar-link"
+        id="logoutLink"
+      >
+
+        <span class="sidebar-icon">
+          ↪
+        </span>
+
+        <span>
+          Logout
+        </span>
+
+      </a>
+
+
+    </nav>
+
+  </aside>
+
+
+  <!-- ==========================================
+       Navbar
+       ========================================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      TownCare
+    </div>
+
+
+    <div class="nav-right">
+
+      <a
+        href="dashboard.html"
+        class="home-button"
+      >
+        Dashboard
+      </a>
+
+
+      <div
+        class="profile-button"
+        id="adminInitials"
+      ></div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ==========================================
+       Main Content
+       ========================================== -->
+
+  <main class="container">
+
+
+    <!-- ========================================
+         Page Header
+         ======================================== -->
+
+    <section class="page-header">
+
+      <div>
+
+        <h1>
+          Bills
+        </h1>
+
+        <p>
+          Create and manage maintenance bills for residents.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Bill Statistics
+         ======================================== -->
+
+    <section class="stats-grid">
+
+
+      <!-- Total Bills -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ₹
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Total Bills
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalBills"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Pending Bills -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🕐
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Pending Bills
+          </div>
+
+          <div
+            class="stat-value"
+            id="pendingBills"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Paid Bills -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ✓
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Paid Bills
+          </div>
+
+          <div
+            class="stat-value"
+            id="paidBills"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Pending Amount -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ₹
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Pending Amount
+          </div>
+
+          <div
+            class="stat-value"
+            id="pendingAmount"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ========================================
+         Create Bill
+         ======================================== -->
+
+    <section class="create-bill-panel">
+
+
+      <div class="panel-header">
+
+        <div>
+
+          <h2>
+            Create New Bill
+          </h2>
+
+          <p>
+            Create a maintenance bill for an approved resident.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Error -->
+
+      <div
+        id="formErrorMessage"
+        class="error-message"
+        role="alert"
+      ></div>
+
+
+      <!-- Success -->
+
+      <div
+        id="formSuccessMessage"
+        class="success-message"
+        role="status"
+      ></div>
+
+
+      <form
+        id="billForm"
+        novalidate
+      >
+
+
+        <div class="form-grid">
+
+
+          <!-- Resident -->
+
+          <div class="form-group full-width">
+
+            <label for="residentId">
+              Resident
+            </label>
+
+            <select
+              id="residentId"
+              name="residentId"
+              required
+            >
+
+              <option value="">
+                Loading residents...
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- Bill Type -->
+
+          <div class="form-group">
+
+            <label for="billType">
+              Bill Type
+            </label>
+
+            <input
+              type="text"
+              id="billType"
+              name="billType"
+              placeholder="Enter bill type"
+              maxlength="100"
+              autocomplete="off"
+              required
+            />
+
+          </div>
+
+
+          <!-- Month -->
+
+          <div class="form-group">
+
+            <label for="billMonth">
+              Month
+            </label>
+
+            <select
+              id="billMonth"
+              name="billMonth"
+              required
+            >
+
+              <option value="">
+                Select month
+              </option>
+
+              <option value="January">
+                January
+              </option>
+
+              <option value="February">
+                February
+              </option>
+
+              <option value="March">
+                March
+              </option>
+
+              <option value="April">
+                April
+              </option>
+
+              <option value="May">
+                May
+              </option>
+
+              <option value="June">
+                June
+              </option>
+
+              <option value="July">
+                July
+              </option>
+
+              <option value="August">
+                August
+              </option>
+
+              <option value="September">
+                September
+              </option>
+
+              <option value="October">
+                October
+              </option>
+
+              <option value="November">
+                November
+              </option>
+
+              <option value="December">
+                December
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- Year -->
+
+          <div class="form-group">
+
+            <label for="billYear">
+              Year
+            </label>
+
+            <input
+              type="number"
+              id="billYear"
+              name="billYear"
+              placeholder="Enter year"
+              min="2000"
+              max="2100"
+              step="1"
+              required
+            />
+
+          </div>
+
+
+          <!-- Amount -->
+
+          <div class="form-group">
+
+            <label for="billAmount">
+              Amount
+            </label>
+
+            <input
+              type="number"
+              id="billAmount"
+              name="billAmount"
+              placeholder="Enter amount"
+              min="0"
+              step="0.01"
+              inputmode="decimal"
+              required
+            />
+
+          </div>
+
+
+          <!-- Due Date -->
+
+          <div class="form-group">
+
+            <label for="dueDate">
+              Due Date
+            </label>
+
+            <input
+              type="date"
+              id="dueDate"
+              name="dueDate"
+              required
+            />
+
+          </div>
+
+
+        </div>
+
+
+        <div class="form-actions">
+
+          <button
+            type="submit"
+            class="primary-button"
+            id="createBillButton"
+          >
+            Create Bill
+          </button>
+
+        </div>
+
+
+      </form>
+
+    </section>
+
+
+    <!-- ========================================
+         Bills Management
+         ======================================== -->
+
+    <section class="bills-panel">
+
+
+      <div class="panel-header">
+
+        <div>
+
+          <h2>
+            Resident Bills
+          </h2>
+
+          <p>
+            View bills and update their payment status.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================
+           Search + Filter
+           ====================================== -->
+
+      <div class="filter-bar">
+
+
+        <div class="search-box">
+
+          <label
+            for="billSearch"
+            class="sr-only"
+          >
+            Search Bills
+          </label>
+
+          <input
+            type="search"
+            id="billSearch"
+            placeholder="Search by resident, house number or bill type"
+            autocomplete="off"
+          />
+
+        </div>
+
+
+        <div class="filter-box">
+
+          <label
+            for="billStatusFilter"
+            class="sr-only"
+          >
+            Filter Bills
+          </label>
+
+          <select
+            id="billStatusFilter"
+          >
+
+            <option value="all">
+              All Status
+            </option>
+
+            <option value="Pending">
+              Pending
+            </option>
+
+            <option value="Paid">
+              Paid
+            </option>
+
+          </select>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- ======================================
+           Messages
+           ====================================== -->
+
+      <div
+        id="listErrorMessage"
+        class="error-message"
+        role="alert"
+      ></div>
+
+
+      <div
+        id="listSuccessMessage"
+        class="success-message"
+        role="status"
+      ></div>
+
+
+      <!-- ======================================
+           Bill List
+           ====================================== -->
+
+      <div
+        class="bill-list"
+        id="billList"
+      >
+
+        <div class="loading-state">
+          Loading bills...
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ==========================================
+       Footer
+       ========================================== -->
+
+  <footer>
+
+    <p>
+      TownCare &copy; 2026 | Samudra Township
+    </p>
+
+  </footer>
+
+
+  <!-- ==========================================
+       JavaScript
+       ========================================== -->
+
+  <script src="../js/bills.js"></script>
+
+</body>
+
+</html>
