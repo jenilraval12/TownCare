@@ -1,0 +1,784 @@
+/* ==========================================
+   TownCare - Emergency Numbers
+   ========================================== */
+
+:root {
+    --primary-green: #1F7A4D;
+    --light-green: #D8EBE2;
+    --page-bg: #EEF2F1;
+    --green-surface: #C4DDD1;
+    --main-text: #23352C;
+    --secondary-text: #557064;
+    --white: #FFFFFF;
+    --border: #E2E8E4;
+
+    --emergency-bg: #FCEEEE;
+    --emergency-border: #EDCACA;
+    --emergency-text: #B83232;
+    --emergency-button: #C93636;
+}
+
+
+/* ==========================================
+   Reset
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   Body
+   ========================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--page-bg);
+
+    color: var(--main-text);
+
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   Sidebar Menu
+   ========================================== */
+
+.sidebar-toggle {
+    display: none;
+}
+
+
+/* Three-line menu button */
+
+.menu-button {
+    position: fixed;
+
+    top: 15px;
+    left: 22px;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    z-index: 1200;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.menu-button:hover {
+    border-color: var(--primary-green);
+
+    box-shadow: 0 6px 16px rgba(31, 122, 77, 0.15);
+}
+
+.menu-button span {
+    width: 20px;
+    height: 2px;
+
+    background-color: var(--primary-green);
+
+    border-radius: 2px;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: -290px;
+
+    width: 280px;
+    height: 100vh;
+
+    background-color: var(--white);
+
+    border-right: 1px solid var(--border);
+
+    z-index: 1300;
+
+    box-shadow: 8px 0 25px rgba(0, 0, 0, 0.08);
+
+    transition: left 0.3s ease;
+
+    overflow-y: auto;
+}
+
+
+/* Open Sidebar */
+
+.sidebar-toggle:checked ~ .sidebar {
+    left: 0;
+}
+
+
+/* Sidebar Overlay */
+
+.sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background-color: rgba(35, 53, 44, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 1250;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    cursor: pointer;
+}
+
+.sidebar-toggle:checked ~ .sidebar-overlay {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* Sidebar Header */
+
+.sidebar-header {
+    height: 70px;
+
+    padding: 0 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-logo {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: var(--primary-green);
+}
+
+.sidebar-close {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    color: var(--secondary-text);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.sidebar-close:hover {
+    background-color: var(--light-green);
+
+    color: var(--primary-green);
+}
+
+
+/* Sidebar Navigation */
+
+.sidebar-nav {
+    padding: 18px 12px;
+}
+
+.sidebar-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 5px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.25s;
+}
+
+.sidebar-link:hover {
+    background-color: #EEF7F3;
+
+    color: var(--primary-green);
+}
+
+.sidebar-link.active {
+    background-color: var(--light-green);
+
+    color: var(--primary-green);
+}
+
+.sidebar-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================
+   Navbar
+   ========================================== */
+
+.navbar {
+    height: 70px;
+
+    background-color: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6% 0 80px;
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* TownCare Logo */
+
+.logo {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: var(--primary-green);
+}
+
+
+/* Right-side Navigation */
+
+.nav-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* Home Button */
+
+.home-button {
+    text-decoration: none;
+
+    background-color: var(--primary-green);
+
+    color: var(--white);
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.home-button:hover {
+    background-color: #17613D;
+}
+
+
+/* Profile Button */
+
+.profile-button {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background-color: var(--light-green);
+
+    color: var(--primary-green);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   Main Container
+   ========================================== */
+
+.main-container {
+    width: 88%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 40px 0 60px;
+}
+
+
+/* ==========================================
+   Page Header
+   ========================================== */
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: var(--secondary-text);
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   Emergency Notice
+   ========================================== */
+
+.emergency-notice {
+    background-color: var(--emergency-bg);
+
+    border: 1px solid var(--emergency-border);
+
+    border-radius: 12px;
+
+    padding: 20px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 35px;
+}
+
+.notice-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background-color: var(--emergency-button);
+
+    color: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.emergency-notice h2 {
+    color: var(--emergency-text);
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.emergency-notice p {
+    color: #7F6262;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   Contacts Section
+   ========================================== */
+
+.contacts-section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    font-size: 22px;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   Contacts Grid
+   ========================================== */
+
+.contacts-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ==========================================
+   Contact Card
+   ========================================== */
+
+.contact-card {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    transition: 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--primary-green);
+
+    box-shadow: 0 7px 20px rgba(31, 122, 77, 0.08);
+}
+
+
+/* ==========================================
+   Contact Icon
+   ========================================== */
+
+.contact-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background-color: var(--light-green);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 24px;
+}
+
+
+/* ==========================================
+   Contact Details
+   ========================================== */
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-details h3 {
+    font-size: 17px;
+
+    margin-bottom: 6px;
+}
+
+.contact-details p {
+    color: var(--secondary-text);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 14px;
+}
+
+
+/* ==========================================
+   Call Button
+   ========================================== */
+
+.call-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--primary-green);
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    padding: 9px 15px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.call-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   Important Information
+   ========================================== */
+
+.important-section {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 10px;
+}
+
+.important-section h2 {
+    font-size: 17px;
+
+    margin-bottom: 7px;
+}
+
+.important-section p {
+    color: var(--secondary-text);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   Footer
+   ========================================== */
+
+.footer {
+    background-color: var(--primary-green);
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 25px;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   Tablet
+   ========================================== */
+
+@media (max-width: 850px) {
+
+    .main-container {
+        width: 92%;
+    }
+
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   Mobile
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 20px 0 75px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+    .home-button {
+        display: none;
+    }
+
+    .profile-button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .main-container {
+        width: 92%;
+
+        padding-top: 30px;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .emergency-notice {
+        align-items: flex-start;
+
+        padding: 17px;
+    }
+
+    .notice-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 20px;
+    }
+
+    .emergency-notice h2 {
+        font-size: 16px;
+    }
+
+    .emergency-notice p {
+        font-size: 12px;
+    }
+
+    .contact-card {
+        padding: 18px;
+    }
+
+    .contact-icon {
+        width: 46px;
+        height: 46px;
+
+        font-size: 21px;
+    }
+
+    .contact-details h3 {
+        font-size: 16px;
+    }
+
+    .contact-details p {
+        font-size: 12px;
+    }
+
+    .call-btn {
+        width: 100%;
+
+        padding: 10px;
+    }
+
+
+    /* Sidebar Mobile */
+
+    .sidebar {
+        width: 275px;
+
+        left: -285px;
+    }
+
+    .menu-button {
+        left: 15px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+}
