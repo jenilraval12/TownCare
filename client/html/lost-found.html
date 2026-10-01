@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lost & Found - TownCare</title>
+
+    <link rel="stylesheet" href="../css/lost-found.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Sidebar Menu -->
+    <input
+        type="checkbox"
+        id="sidebarToggle"
+        class="sidebar-toggle"
+    />
+
+
+    <!-- Three Line Menu Button -->
+    <label
+        for="sidebarToggle"
+        class="menu-button"
+        aria-label="Open navigation menu"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+
+    <!-- Sidebar Overlay -->
+    <label
+        for="sidebarToggle"
+        class="sidebar-overlay"
+        aria-label="Close navigation menu"
+    ></label>
+
+
+    <!-- Sidebar -->
+    <aside
+        class="sidebar"
+        aria-label="TownCare navigation"
+    >
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+                TownCare
+            </div>
+
+
+            <label
+                for="sidebarToggle"
+                class="sidebar-close"
+                aria-label="Close navigation menu"
+            >
+                &times;
+            </label>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <a
+                href="home.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">⌂</span>
+                <span>Home</span>
+            </a>
+
+
+            <a
+                href="notices.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">📢</span>
+                <span>Notice Board</span>
+            </a>
+
+
+            <a
+                href="visitors.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">👤</span>
+                <span>Visitors</span>
+            </a>
+
+
+            <a
+                href="complaints.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">🔧</span>
+                <span>Complaints & Services</span>
+            </a>
+
+
+            <a
+                href="bills.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">₹</span>
+                <span>My Bills</span>
+            </a>
+
+
+            <a
+                href="lost-found.html"
+                class="sidebar-link active"
+            >
+                <span class="sidebar-icon">🔎</span>
+                <span>Lost & Found</span>
+            </a>
+
+
+            <a
+                href="emergency.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">🚨</span>
+                <span>Emergency Numbers</span>
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">◉</span>
+                <span>Profile</span>
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+
+        <div class="logo">
+            TownCare
+        </div>
+
+
+        <div class="nav-right">
+
+
+            <a
+                href="home.html"
+                class="home-button"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="profile-button"
+            >
+                JR
+            </a>
+
+
+        </div>
+
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="main-container">
+
+
+        <!-- Page Header -->
+        <section class="page-header">
+
+            <div>
+
+                <h1>
+                    Lost & Found
+                </h1>
+
+                <p>
+                    Report lost items or help residents find their belongings.
+                </p>
+
+            </div>
+
+
+            <button
+                id="reportItemBtn"
+                class="primary-btn"
+            >
+                + Report Item
+            </button>
+
+        </section>
+
+
+        <!-- Report Item Form -->
+        <section
+            id="reportFormSection"
+            class="form-section"
+        >
+
+            <div class="section-header">
+
+                <h2>
+                    Report Lost / Found Item
+                </h2>
+
+            </div>
+
+
+            <form id="lostFoundForm">
+
+
+                <div class="form-grid">
+
+
+                    <!-- Item Type -->
+                    <div class="form-group">
+
+                        <label for="itemType">
+                            Type
+                        </label>
+
+
+                        <select
+                            id="itemType"
+                            required
+                        >
+
+                            <option value="">
+                                Select Type
+                            </option>
+
+                            <option value="Lost">
+                                Lost
+                            </option>
+
+                            <option value="Found">
+                                Found
+                            </option>
+
+                        </select>
+
+
+                        <small
+                            class="error-message"
+                            id="itemTypeError"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- Item Name -->
+                    <div class="form-group">
+
+                        <label for="itemName">
+                            Item Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="itemName"
+                            placeholder="Enter item name"
+                            required
+                        >
+
+
+                        <small
+                            class="error-message"
+                            id="itemNameError"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- Location -->
+                    <div class="form-group">
+
+                        <label for="itemLocation">
+                            Location
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="itemLocation"
+                            placeholder="Where was it lost/found?"
+                            required
+                        >
+
+
+                        <small
+                            class="error-message"
+                            id="itemLocationError"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- Date -->
+                    <div class="form-group">
+
+                        <label for="itemDate">
+                            Date
+                        </label>
+
+
+                        <input
+                            type="date"
+                            id="itemDate"
+                            required
+                        >
+
+
+                        <small
+                            class="error-message"
+                            id="itemDateError"
+                        ></small>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Description -->
+                <div class="form-group full-width">
+
+                    <label for="itemDescription">
+                        Description
+                    </label>
+
+
+                    <textarea
+                        id="itemDescription"
+                        rows="5"
+                        placeholder="Provide additional details about the item..."
+                        required
+                    ></textarea>
+
+
+                    <small
+                        class="error-message"
+                        id="itemDescriptionError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Photo -->
+                <div class="form-group full-width">
+
+                    <label for="itemPhoto">
+                        Photo
+                    </label>
+
+
+                    <input
+                        type="file"
+                        id="itemPhoto"
+                        accept="image/png, image/jpeg, image/jpg"
+                    >
+
+
+                    <small>
+                        Upload one photo (JPG, JPEG or PNG).
+                    </small>
+
+
+                    <div
+                        id="imagePreview"
+                        class="image-preview"
+                    ></div>
+
+
+                    <small
+                        class="error-message"
+                        id="itemPhotoError"
+                    ></small>
+
+                </div>
+
+
+                <!-- Form Buttons -->
+                <div class="form-actions">
+
+
+                    <button
+                        type="button"
+                        id="cancelReportBtn"
+                        class="secondary-btn"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Submit Report
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- Lost & Found Records -->
+        <section class="records-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Recent Reports
+                    </h2>
+
+                    <p>
+                        Lost and found items reported by residents.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Reports List -->
+            <div
+                id="itemsList"
+                class="items-grid"
+            ></div>
+
+
+            <!-- No Items -->
+            <div
+                id="noItems"
+                class="empty-state"
+            >
+
+                <div class="empty-icon">
+                    🔎
+                </div>
+
+
+                <h3>
+                    No Reports Found
+                </h3>
+
+
+                <p>
+                    There are currently no lost or found items to display.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Item Details Modal -->
+    <div
+        id="itemModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+
+            <button
+                id="closeModal"
+                class="close-modal"
+            >
+                &times;
+            </button>
+
+
+            <div
+                id="modalImageContainer"
+                class="modal-image-container"
+            >
+
+                <img
+                    id="modalImage"
+                    src=""
+                    alt="Item Photo"
+                >
+
+            </div>
+
+
+            <div class="modal-header">
+
+                <span
+                    id="modalType"
+                    class="item-type"
+                >
+                    Lost
+                </span>
+
+
+                <h2 id="modalItemName">
+                    Item Name
+                </h2>
+
+            </div>
+
+
+            <div class="modal-details">
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Location
+                    </span>
+
+                    <strong id="modalLocation">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Date
+                    </span>
+
+                    <strong id="modalDate">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>
+                        Reported By
+                    </span>
+
+                    <strong id="modalReportedBy">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-row description-row">
+
+                    <span>
+                        Description
+                    </span>
+
+                    <p id="modalDescription">
+                        -
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            &copy; 2026 TownCare. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/lost-found.js"></script>
+
+</body>
+
+</html>
