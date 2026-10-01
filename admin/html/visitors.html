@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Visitor Management - TownCare</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/visitors.css"
+  />
+
+</head>
+
+
+<body>
+
+
+  <!-- ==========================================
+       Sidebar Menu
+       ========================================== -->
+
+  <input
+    type="checkbox"
+    id="sidebarToggle"
+    class="sidebar-toggle"
+  />
+
+
+  <!-- Menu Button -->
+
+  <label
+    for="sidebarToggle"
+    class="menu-button"
+    aria-label="Open navigation menu"
+  >
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </label>
+
+
+  <!-- Overlay -->
+
+  <label
+    for="sidebarToggle"
+    class="sidebar-overlay"
+    aria-label="Close navigation menu"
+  ></label>
+
+
+  <!-- ==========================================
+       Sidebar
+       ========================================== -->
+
+  <aside
+    class="sidebar"
+    aria-label="TownCare admin navigation"
+  >
+
+    <div class="sidebar-header">
+
+      <div class="sidebar-logo">
+        TownCare
+      </div>
+
+
+      <label
+        for="sidebarToggle"
+        class="sidebar-close"
+        aria-label="Close navigation menu"
+      >
+        &times;
+      </label>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+
+      <!-- Dashboard -->
+
+      <a
+        href="dashboard.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          ⌂
+        </span>
+
+        <span>
+          Dashboard
+        </span>
+
+      </a>
+
+
+      <!-- Residents -->
+
+      <a
+        href="residents.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          👥
+        </span>
+
+        <span>
+          Residents
+        </span>
+
+      </a>
+
+
+      <!-- Visitors -->
+
+      <a
+        href="visitors.html"
+        class="sidebar-link active"
+      >
+
+        <span class="sidebar-icon">
+          👤
+        </span>
+
+        <span>
+          Visitors
+        </span>
+
+      </a>
+
+
+      <!-- Complaints -->
+
+      <a
+        href="complaints.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          🔧
+        </span>
+
+        <span>
+          Complaints & Services
+        </span>
+
+      </a>
+
+
+      <!-- Bills -->
+
+      <a
+        href="bills.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          ₹
+        </span>
+
+        <span>
+          Bills
+        </span>
+
+      </a>
+
+
+      <!-- Notices -->
+
+      <a
+        href="notices.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          📢
+        </span>
+
+        <span>
+          Notice Board
+        </span>
+
+      </a>
+
+
+      <!-- Logout -->
+
+      <a
+        href="#"
+        class="sidebar-link"
+        id="logoutLink"
+      >
+
+        <span class="sidebar-icon">
+          ↪
+        </span>
+
+        <span>
+          Logout
+        </span>
+
+      </a>
+
+
+    </nav>
+
+  </aside>
+
+
+  <!-- ==========================================
+       Navbar
+       ========================================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      TownCare
+    </div>
+
+
+    <div class="nav-right">
+
+      <a
+        href="dashboard.html"
+        class="home-button"
+      >
+        Dashboard
+      </a>
+
+
+      <div
+        class="profile-button"
+        id="adminInitials"
+      ></div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ==========================================
+       Main Content
+       ========================================== -->
+
+  <main class="container">
+
+
+    <!-- ========================================
+         Page Header
+         ======================================== -->
+
+    <section class="page-header">
+
+      <div>
+
+        <h1>
+          Visitor Management
+        </h1>
+
+        <p>
+          Monitor visitor invitations and manage township entry.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Visitor Statistics
+         ======================================== -->
+
+    <section class="stats-grid">
+
+
+      <!-- Total Visitors -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          👥
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Total Visitors
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalVisitors"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Pending Visitors -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ⏳
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Pending Entry
+          </div>
+
+          <div
+            class="stat-value"
+            id="pendingVisitors"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Inside Visitors -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🚪
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Inside
+          </div>
+
+          <div
+            class="stat-value"
+            id="insideVisitors"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Completed Visitors -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ✓
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Completed
+          </div>
+
+          <div
+            class="stat-value"
+            id="completedVisitors"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ========================================
+         Visitor Management Panel
+         ======================================== -->
+
+    <section class="visitor-panel">
+
+
+      <!-- Panel Header -->
+
+      <div class="panel-header">
+
+        <div>
+
+          <h2>
+            Visitor Records
+          </h2>
+
+          <p>
+            Review visitor invitations and manage entry status.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================
+           Search + Filter
+           ====================================== -->
+
+      <div class="filter-bar">
+
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+          <label
+            for="visitorSearch"
+            class="sr-only"
+          >
+            Search Visitors
+          </label>
+
+          <input
+            type="search"
+            id="visitorSearch"
+            placeholder="Search by visitor, resident, house or mobile"
+            autocomplete="off"
+          />
+
+        </div>
+
+
+        <!-- Status Filter -->
+
+        <div class="filter-box">
+
+          <label
+            for="statusFilter"
+            class="sr-only"
+          >
+            Filter by Status
+          </label>
+
+          <select
+            id="statusFilter"
+          >
+
+            <option value="all">
+              All Status
+            </option>
+
+            <option value="upcoming">
+              Upcoming
+            </option>
+
+            <option value="inside">
+              Inside
+            </option>
+
+            <option value="completed">
+              Completed
+            </option>
+
+          </select>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- ======================================
+           Messages
+           ====================================== -->
+
+      <div
+        id="listErrorMessage"
+        class="error-message"
+        role="alert"
+      ></div>
+
+
+      <div
+        id="listSuccessMessage"
+        class="success-message"
+        role="status"
+      ></div>
+
+
+      <!-- ======================================
+           Visitor List
+           ====================================== -->
+
+      <div
+        class="visitor-list"
+        id="visitorList"
+      >
+
+        <div class="loading-state">
+          Loading visitors...
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ==========================================
+       Footer
+       ========================================== -->
+
+  <footer>
+
+    <p>
+      TownCare &copy; 2026 | Samudra Township
+    </p>
+
+  </footer>
+
+
+  <!-- ==========================================
+       JavaScript
+       ========================================== -->
+
+  <script src="../js/visitors.js"></script>
+
+
+</body>
+
+</html>
