@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Home - TownCare</title>
+
+  <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+
+  <!-- Sidebar Menu -->
+  <input type="checkbox" id="sidebarToggle" class="sidebar-toggle" />
+
+  <label for="sidebarToggle" class="menu-button" aria-label="Open navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <label for="sidebarToggle" class="sidebar-overlay" aria-label="Close navigation menu"></label>
+
+  <aside class="sidebar" aria-label="TownCare navigation">
+
+    <div class="sidebar-header">
+      <div class="sidebar-logo">TownCare</div>
+
+      <label
+        for="sidebarToggle"
+        class="sidebar-close"
+        aria-label="Close navigation menu"
+      >
+        &times;
+      </label>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+      <a href="home.html" class="sidebar-link active">
+        <span class="sidebar-icon">⌂</span>
+        <span>Home</span>
+      </a>
+
+      <a href="notices.html" class="sidebar-link">
+        <span class="sidebar-icon">📢</span>
+        <span>Notice Board</span>
+      </a>
+
+      <a href="visitors.html" class="sidebar-link">
+        <span class="sidebar-icon">👤</span>
+        <span>Visitors</span>
+      </a>
+
+      <a href="complaints.html" class="sidebar-link">
+        <span class="sidebar-icon">🔧</span>
+        <span>Complaints & Services</span>
+      </a>
+
+      <a href="bills.html" class="sidebar-link">
+        <span class="sidebar-icon">₹</span>
+        <span>My Bills</span>
+      </a>
+
+      <a href="lost-found.html" class="sidebar-link">
+        <span class="sidebar-icon">🔎</span>
+        <span>Lost & Found</span>
+      </a>
+
+      <a href="emergency.html" class="sidebar-link">
+        <span class="sidebar-icon">🚨</span>
+        <span>Emergency Numbers</span>
+      </a>
+
+      <a href="profile.html" class="sidebar-link">
+        <span class="sidebar-icon">◉</span>
+        <span>Profile</span>
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- Navbar -->
+  <nav class="navbar">
+
+    <div class="logo">
+      TownCare
+    </div>
+
+    <div class="nav-right">
+
+      <a href="home.html" class="home-button">
+        Home
+      </a>
+
+      <a href="profile.html" class="profile-button" id="profileInitials">
+        JR
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Main Content -->
+  <main class="container">
+
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+
+      <h1>
+        Welcome Back, <span id="welcomeName">Jenil</span>
+      </h1>
+
+      <p>
+        House No. <span id="welcomeHouse">A-01/1</span>
+        &nbsp;|&nbsp;
+        Samudra Township
+      </p>
+
+    </section>
+
+
+    <!-- Township Slideshow -->
+    <section class="slideshow">
+
+
+      <!-- Slide 1 -->
+      <div class="slide active">
+
+        <img
+          src="../../images/Township-6.jpeg"
+          alt="Samudra Township"
+        />
+
+        <div class="slide-overlay">
+
+          <h2>
+            Life at Samudra Township
+          </h2>
+
+          <p>
+            A welcoming residential community surrounded by greenery.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Slide 2 -->
+      <div class="slide">
+
+        <img
+          src="../../images/Township-1.jpeg"
+          alt="Indoor Sports Facility"
+        />
+
+        <div class="slide-overlay">
+
+          <h2>
+            Indoor Sports & Recreation
+          </h2>
+
+          <p>
+            A dedicated space for residents to stay active and enjoy sports.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Slide 3 -->
+      <div class="slide">
+
+        <img
+          src="../../images/Township-5.jpeg"
+          alt="Township Open Ground"
+        />
+
+        <div class="slide-overlay">
+
+          <h2>
+            Open Green Spaces
+          </h2>
+
+          <p>
+            Wide open grounds to relax, walk and enjoy the outdoors.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Slide 4 -->
+      <div class="slide">
+
+        <img
+          src="../../images/Township-4.jpeg"
+          alt="Outdoor Recreation"
+        />
+
+        <div class="slide-overlay">
+
+          <h2>
+            Outdoor Recreation
+          </h2>
+
+          <p>
+            Well-maintained outdoor courts for sports and recreational activities.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Slide 5 -->
+      <div class="slide">
+
+        <img
+          src="../../images/Township-8.jpeg"
+          alt="Township Sports Ground"
+        />
+
+        <div class="slide-overlay">
+
+          <h2>
+            Active Community Life
+          </h2>
+
+          <p>
+            Open spaces designed for recreation, fitness and community activities.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Slide 6 -->
+      <div class="slide">
+
+        <img
+          src="../../images/Township-9.jpeg"
+          alt="Township Greenery"
+        />
+
+        <div class="slide-overlay">
+
+          <h2>
+            Nature Around Us
+          </h2>
+
+          <p>
+            Peaceful green surroundings that make everyday township life refreshing.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Slide 7 -->
+      <div class="slide">
+
+        <img
+          src="../../images/Township-12.jpeg"
+          alt="Township Garden"
+        />
+
+        <div class="slide-overlay">
+
+          <h2>
+            Green & Peaceful Surroundings
+          </h2>
+
+          <p>
+            Landscaped spaces that bring a calm and refreshing feel to township life.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Slideshow Dots -->
+      <div class="slide-dots">
+
+        <span class="dot active"></span>
+
+        <span class="dot"></span>
+
+        <span class="dot"></span>
+
+        <span class="dot"></span>
+
+        <span class="dot"></span>
+
+        <span class="dot"></span>
+
+        <span class="dot"></span>
+
+      </div>
+
+    </section>
+
+
+    <!-- Quick Access -->
+    <section>
+
+      <h2 class="section-title">
+        Quick Access
+      </h2>
+
+
+      <div class="quick-grid">
+
+
+        <a href="notices.html" class="quick-card">
+
+          <div class="quick-icon">
+            📢
+          </div>
+
+          <h3>
+            Notice Board
+          </h3>
+
+          <p>
+            View important township announcements.
+          </p>
+
+        </a>
+
+
+        <a href="visitors.html" class="quick-card">
+
+          <div class="quick-icon">
+            👤
+          </div>
+
+          <h3>
+            Visitors
+          </h3>
+
+          <p>
+            Manage visitors and generate invitation OTPs.
+          </p>
+
+        </a>
+
+
+        <a href="complaints.html" class="quick-card">
+
+          <div class="quick-icon">
+            🔧
+          </div>
+
+          <h3>
+            Complaints & Services
+          </h3>
+
+          <p>
+            Request electricians, plumbers, carpenters and more.
+          </p>
+
+        </a>
+
+
+        <a href="bills.html" class="quick-card">
+
+          <div class="quick-icon">
+            ₹
+          </div>
+
+          <h3>
+            My Bills
+          </h3>
+
+          <p>
+            Check maintenance bills and payment records.
+          </p>
+
+        </a>
+
+
+        <a href="lost-found.html" class="quick-card">
+
+          <div class="quick-icon">
+            🔎
+          </div>
+
+          <h3>
+            Lost & Found
+          </h3>
+
+          <p>
+            Report and discover lost or found belongings.
+          </p>
+
+        </a>
+
+
+        <a href="emergency.html" class="quick-card">
+
+          <div class="quick-icon">
+            🚨
+          </div>
+
+          <h3>
+            Emergency
+          </h3>
+
+          <p>
+            Access important emergency contact numbers.
+          </p>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- Dashboard -->
+    <section class="dashboard-grid">
+
+      <!-- Recent Complaints -->
+      <div class="panel">
+        <div class="panel-header">
+          <h2>
+            Recent Complaints
+          </h2>
+
+          <a href="complaints.html" class="view-all">
+            View All
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Current Bill -->
+      <div class="panel">
+        <div class="panel-header">
+          <h2>
+            My Current Bill
+          </h2>
+
+          <a href="bills.html" class="view-all">
+            View Bills
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Latest Notices -->
+      <div class="panel">
+        <div class="panel-header">
+          <h2>
+            Latest Notices
+          </h2>
+
+          <a href="notices.html" class="view-all">
+            View All
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Recent Visitor -->
+      <div class="panel">
+        <div class="panel-header">
+          <h2>
+            Recent Visitor
+          </h2>
+
+          <a href="visitors.html" class="view-all">
+            Visitors
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Emergency -->
+    <section class="emergency-card">
+
+      <div>
+
+        <h2>
+          Need Emergency Help?
+        </h2>
+
+        <p>
+          Access police, ambulance, fire and township security contact numbers.
+        </p>
+
+      </div>
+
+
+      <a
+        href="emergency.html"
+        class="emergency-button"
+      >
+        Emergency Numbers
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <p>
+      TownCare &copy; 2026 | Samudra Township
+    </p>
+
+  </footer>
+
+
+  <script src="../js/home.js"></script>
+
+</body>
+
+</html>
