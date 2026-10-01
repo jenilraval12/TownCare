@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Notice Board - TownCare</title>
+
+  <link rel="stylesheet" href="../css/notices.css">
+</head>
+
+<body>
+
+
+  <!-- Sidebar Menu -->
+  <input type="checkbox" id="sidebarToggle" class="sidebar-toggle" />
+
+  <label
+    for="sidebarToggle"
+    class="menu-button"
+    aria-label="Open navigation menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+
+  <!-- Sidebar Overlay -->
+  <label
+    for="sidebarToggle"
+    class="sidebar-overlay"
+    aria-label="Close navigation menu"
+  ></label>
+
+
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="TownCare navigation">
+
+    <div class="sidebar-header">
+
+      <div class="sidebar-logo">
+        TownCare
+      </div>
+
+      <label
+        for="sidebarToggle"
+        class="sidebar-close"
+        aria-label="Close navigation menu"
+      >
+        &times;
+      </label>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+      <a href="home.html" class="sidebar-link">
+        <span class="sidebar-icon">⌂</span>
+        <span>Home</span>
+      </a>
+
+
+      <a href="notices.html" class="sidebar-link active">
+        <span class="sidebar-icon">📢</span>
+        <span>Notice Board</span>
+      </a>
+
+
+      <a href="visitors.html" class="sidebar-link">
+        <span class="sidebar-icon">👤</span>
+        <span>Visitors</span>
+      </a>
+
+
+      <a href="complaints.html" class="sidebar-link">
+        <span class="sidebar-icon">🔧</span>
+        <span>Complaints & Services</span>
+      </a>
+
+
+      <a href="bills.html" class="sidebar-link">
+        <span class="sidebar-icon">₹</span>
+        <span>My Bills</span>
+      </a>
+
+
+      <a href="lost-found.html" class="sidebar-link">
+        <span class="sidebar-icon">🔎</span>
+        <span>Lost & Found</span>
+      </a>
+
+
+      <a href="emergency.html" class="sidebar-link">
+        <span class="sidebar-icon">🚨</span>
+        <span>Emergency Numbers</span>
+      </a>
+
+
+      <a href="profile.html" class="sidebar-link">
+        <span class="sidebar-icon">◉</span>
+        <span>Profile</span>
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- Navbar -->
+  <nav class="navbar">
+
+    <div class="logo">
+      TownCare
+    </div>
+
+
+    <div class="nav-right">
+
+      <a href="home.html" class="home-button">
+        Home
+      </a>
+
+
+      <a href="profile.html" class="profile-button">
+        JR
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <section class="page-header">
+
+      <h1>
+        Notice Board
+      </h1>
+
+      <p>
+        Stay updated with the latest announcements from Samudra Township.
+      </p>
+
+    </section>
+
+
+    <!-- Filters -->
+    <section class="filter-section">
+
+      <div class="filter-group">
+
+        <label for="searchInput">
+          Search
+        </label>
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search by subject or keyword..."
+        />
+
+      </div>
+
+
+      <div class="filter-group">
+
+        <label for="fromDate">
+          From Date
+        </label>
+
+        <input
+          type="date"
+          id="fromDate"
+        />
+
+      </div>
+
+
+      <div class="filter-group">
+
+        <label for="toDate">
+          To Date
+        </label>
+
+        <input
+          type="date"
+          id="toDate"
+        />
+
+      </div>
+
+
+      <div class="filter-group">
+
+        <label for="categoryFilter">
+          Category
+        </label>
+
+        <select id="categoryFilter">
+
+          <option value="all">
+            All Categories
+          </option>
+
+          <option value="important">
+            Important
+          </option>
+
+          <option value="maintenance">
+            Maintenance
+          </option>
+
+          <option value="community">
+            Community
+          </option>
+
+          <option value="security">
+            Security
+          </option>
+
+          <option value="events">
+            Events
+          </option>
+
+          <option value="general">
+            General
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="clear-button"
+        id="clearFilters"
+      >
+        Clear Filters
+      </button>
+
+    </section>
+
+
+    <!-- Notice List -->
+    <section
+      class="notice-list"
+      id="noticeList"
+    ></section>
+
+
+    <!-- No Results -->
+    <div
+      class="no-result"
+      id="noResult"
+    >
+      No notices found matching your search or filters.
+    </div>
+
+  </main>
+
+
+  <!-- Notice Modal -->
+  <div
+    class="modal"
+    id="noticeModal"
+  >
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <div>
+
+          <div
+            class="notice-category"
+            id="modalCategory"
+          ></div>
+
+
+          <h2 id="modalTitle"></h2>
+
+        </div>
+
+
+        <button
+          class="close-button"
+          id="closeModal"
+          type="button"
+        >
+          &times;
+        </button>
+
+      </div>
+
+
+      <div
+        class="modal-meta"
+        id="modalDate"
+      ></div>
+
+
+      <div
+        class="modal-body"
+        id="modalDescription"
+      ></div>
+
+
+      <div
+        class="modal-attachment"
+        id="modalAttachment"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <p>
+      TownCare &copy; 2026 | Samudra Township
+    </p>
+
+  </footer>
+
+
+  <script src="../js/notices.js"></script>
+
+</body>
+
+</html>
