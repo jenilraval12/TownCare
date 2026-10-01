@@ -1,0 +1,813 @@
+/* ==========================================
+   TownCare - Profile
+   ========================================== */
+
+:root {
+    --primary-green: #1F7A4D;
+    --light-green: #D8EBE2;
+    --page-bg: #EEF2F1;
+    --main-text: #23352C;
+    --secondary-text: #557064;
+    --white: #FFFFFF;
+    --border: #E2E8E4;
+
+    --active-bg: #E3F5EA;
+    --active-text: #1F7A4D;
+
+    --logout-bg: #FCEEEE;
+    --logout-border: #EDCACA;
+    --logout-text: #B83232;
+}
+
+
+/* ==========================================
+   Reset
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   Body
+   ========================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--page-bg);
+
+    color: var(--main-text);
+
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   Sidebar Menu
+   ========================================== */
+
+.sidebar-toggle {
+    display: none;
+}
+
+
+/* Three-line Menu Button */
+
+.menu-button {
+    position: fixed;
+
+    top: 15px;
+    left: 22px;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    z-index: 1200;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.menu-button:hover {
+    border-color: var(--primary-green);
+
+    box-shadow: 0 6px 16px rgba(31, 122, 77, 0.15);
+}
+
+.menu-button span {
+    width: 20px;
+    height: 2px;
+
+    background-color: var(--primary-green);
+
+    border-radius: 2px;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: -290px;
+
+    width: 280px;
+    height: 100vh;
+
+    background-color: var(--white);
+
+    border-right: 1px solid var(--border);
+
+    z-index: 1300;
+
+    box-shadow: 8px 0 25px rgba(0, 0, 0, 0.08);
+
+    transition: left 0.3s ease;
+
+    overflow-y: auto;
+}
+
+
+/* Open Sidebar */
+
+.sidebar-toggle:checked ~ .sidebar {
+    left: 0;
+}
+
+
+/* Sidebar Overlay */
+
+.sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background-color: rgba(35, 53, 44, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 1250;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    cursor: pointer;
+}
+
+.sidebar-toggle:checked ~ .sidebar-overlay {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* Sidebar Header */
+
+.sidebar-header {
+    height: 70px;
+
+    padding: 0 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-logo {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: var(--primary-green);
+}
+
+.sidebar-close {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    color: var(--secondary-text);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.sidebar-close:hover {
+    background-color: var(--light-green);
+
+    color: var(--primary-green);
+}
+
+
+/* Sidebar Navigation */
+
+.sidebar-nav {
+    padding: 18px 12px;
+}
+
+.sidebar-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 5px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.25s;
+}
+
+.sidebar-link:hover {
+    background-color: #EEF7F3;
+
+    color: var(--primary-green);
+}
+
+.sidebar-link.active {
+    background-color: var(--light-green);
+
+    color: var(--primary-green);
+}
+
+.sidebar-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================
+   Navbar
+   ========================================== */
+
+.navbar {
+    height: 70px;
+
+    background-color: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6% 0 80px;
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* TownCare Logo */
+
+.logo {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: var(--primary-green);
+}
+
+
+/* Right Side Navigation */
+
+.nav-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* Home Button */
+
+.home-button {
+    text-decoration: none;
+
+    background-color: var(--primary-green);
+
+    color: var(--white);
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.home-button:hover {
+    background-color: #17613D;
+}
+
+
+/* Profile Button in Navbar */
+
+.profile-button {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background-color: var(--light-green);
+
+    color: var(--primary-green);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    border: 2px solid transparent;
+}
+
+.profile-button:hover {
+    border-color: var(--primary-green);
+}
+
+
+/* ==========================================
+   Main Container
+   ========================================== */
+
+.main-container {
+    width: 88%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 40px 0 60px;
+}
+
+
+/* ==========================================
+   Page Header
+   ========================================== */
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: var(--secondary-text);
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   Profile Card
+   ========================================== */
+
+.profile-card {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   Profile Top
+   ========================================== */
+
+.profile-top {
+    padding: 30px;
+
+    background-color: #F7FAF8;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+.profile-avatar {
+    width: 82px;
+    height: 82px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background-color: var(--light-green);
+
+    color: var(--primary-green);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    border: 3px solid var(--white);
+
+    box-shadow: 0 2px 7px rgba(31, 122, 77, 0.12);
+}
+
+.profile-main-info h2 {
+    font-size: 23px;
+
+    margin-bottom: 5px;
+}
+
+.profile-main-info p {
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.account-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background-color: var(--active-bg);
+
+    color: var(--active-text);
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   Profile Section
+   ========================================== */
+
+.profile-section {
+    padding: 25px 30px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+    margin-bottom: 18px;
+}
+
+.section-header h3 {
+    font-size: 17px;
+}
+
+
+/* ==========================================
+   Information Grid
+   ========================================== */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.info-item {
+    background-color: #F8FAF9;
+
+    border: 1px solid #EDF1EE;
+
+    border-radius: 10px;
+
+    padding: 15px;
+}
+
+.info-label {
+    display: block;
+
+    color: var(--secondary-text);
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+.info-item strong {
+    display: block;
+
+    color: var(--main-text);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.status-active {
+    color: var(--primary-green) !important;
+}
+
+
+/* ==========================================
+   Profile Actions
+   ========================================== */
+
+.profile-actions {
+    padding: 22px 30px;
+
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.logout-btn {
+    background-color: var(--logout-bg);
+
+    color: var(--logout-text);
+
+    border: 1px solid var(--logout-border);
+
+    border-radius: 8px;
+
+    padding: 11px 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: var(--logout-text);
+
+    color: var(--white);
+}
+
+
+/* ==========================================
+   Help Card
+   ========================================== */
+
+.help-card {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    margin-top: 25px;
+}
+
+.help-card h2 {
+    font-size: 18px;
+
+    margin-bottom: 6px;
+}
+
+.help-card p {
+    color: var(--secondary-text);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+.help-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    background-color: var(--primary-green);
+
+    color: var(--white);
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.help-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   Footer
+   ========================================== */
+
+.footer {
+    background-color: var(--primary-green);
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 25px;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   Tablet
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .main-container {
+        width: 92%;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   Mobile
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 20px 0 75px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+    .home-button {
+        display: none;
+    }
+
+    .profile-button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .main-container {
+        width: 92%;
+
+        padding-top: 30px;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .profile-top {
+        padding: 22px;
+
+        gap: 16px;
+    }
+
+    .profile-avatar {
+        width: 65px;
+        height: 65px;
+
+        font-size: 20px;
+    }
+
+    .profile-main-info h2 {
+        font-size: 20px;
+    }
+
+    .profile-main-info p {
+        font-size: 13px;
+    }
+
+    .profile-section {
+        padding: 22px;
+    }
+
+    .profile-actions {
+        padding: 20px 22px;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+
+    .help-card {
+        padding: 20px;
+    }
+
+    .help-btn {
+        width: 100%;
+    }
+
+
+    /* Sidebar Mobile */
+
+    .sidebar {
+        width: 275px;
+
+        left: -285px;
+    }
+
+    .menu-button {
+        left: 15px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+}
