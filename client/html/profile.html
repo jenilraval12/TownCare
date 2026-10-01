@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile - TownCare</title>
+
+    <link rel="stylesheet" href="../css/profile.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Sidebar Menu -->
+    <input type="checkbox" id="sidebarToggle" class="sidebar-toggle" />
+
+
+    <!-- Three Line Menu Button -->
+    <label for="sidebarToggle" class="menu-button" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+
+    <!-- Sidebar Overlay -->
+    <label for="sidebarToggle" class="sidebar-overlay" aria-label="Close navigation menu"></label>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="TownCare navigation">
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+                TownCare
+            </div>
+
+
+            <label for="sidebarToggle" class="sidebar-close" aria-label="Close navigation menu">
+                &times;
+            </label>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <a href="home.html" class="sidebar-link">
+                <span class="sidebar-icon">⌂</span>
+                <span>Home</span>
+            </a>
+
+
+            <a href="notices.html" class="sidebar-link">
+                <span class="sidebar-icon">📢</span>
+                <span>Notice Board</span>
+            </a>
+
+
+            <a href="visitors.html" class="sidebar-link">
+                <span class="sidebar-icon">👤</span>
+                <span>Visitors</span>
+            </a>
+
+
+            <a href="complaints.html" class="sidebar-link">
+                <span class="sidebar-icon">🔧</span>
+                <span>Complaints & Services</span>
+            </a>
+
+
+            <a href="bills.html" class="sidebar-link">
+                <span class="sidebar-icon">₹</span>
+                <span>My Bills</span>
+            </a>
+
+
+            <a href="lost-found.html" class="sidebar-link">
+                <span class="sidebar-icon">🔎</span>
+                <span>Lost & Found</span>
+            </a>
+
+
+            <a href="emergency.html" class="sidebar-link">
+                <span class="sidebar-icon">🚨</span>
+                <span>Emergency Numbers</span>
+            </a>
+
+
+            <a href="profile.html" class="sidebar-link active">
+                <span class="sidebar-icon">◉</span>
+                <span>Profile</span>
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+
+        <div class="logo">
+            TownCare
+        </div>
+
+
+        <div class="nav-right">
+
+
+            <a href="home.html" class="home-button">
+                Home
+            </a>
+
+
+            <a href="profile.html" class="profile-button">
+            </a>
+
+
+        </div>
+
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="main-container">
+
+
+        <!-- Page Header -->
+        <section class="page-header">
+
+            <h1>
+                My Profile
+            </h1>
+
+
+            <p>
+                View and manage your TownCare account information.
+            </p>
+
+        </section>
+
+
+        <!-- Profile Overview -->
+        <section class="profile-card">
+
+
+            <div class="profile-top">
+
+
+                <div class="profile-avatar">
+                </div>
+
+
+                <div class="profile-main-info">
+
+                    <h2 id="profileDisplayName">
+                    </h2>
+
+
+                    <p>
+                        Resident
+                    </p>
+
+
+                    <span class="account-status">
+                        Active Account
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Personal Information -->
+            <div class="profile-section">
+
+
+                <div class="section-header">
+
+                    <h3>
+                        Personal Information
+                    </h3>
+
+                </div>
+
+
+                <div class="info-grid">
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Full Name
+                        </span>
+
+
+                        <strong id="profileName">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Mobile Number
+                        </span>
+
+
+                        <strong id="profilePhone">
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Residence Information -->
+            <div class="profile-section">
+
+
+                <div class="section-header">
+
+                    <h3>
+                        Residence Information
+                    </h3>
+
+                </div>
+
+
+                <div class="info-grid">
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            House Number
+                        </span>
+
+
+                        <strong id="profileHouse">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Township
+                        </span>
+
+
+                        <strong>
+                            Samudra Township
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Account Type
+                        </span>
+
+
+                        <strong>
+                            Resident
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Account Status
+                        </span>
+
+
+                        <strong class="status-active">
+                            Approved
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Account Information -->
+            <div class="profile-section">
+
+
+                <div class="section-header">
+
+                    <h3>
+                        Account Information
+                    </h3>
+
+                </div>
+
+
+                <div class="info-grid">
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Username
+                        </span>
+
+
+                        <strong id="profileUsername">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Member Since
+                        </span>
+
+
+                        <strong>
+                            2026
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+            <div class="profile-actions">
+
+
+                <button type="button" id="logoutBtn" class="logout-btn">
+                    Logout
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- Help Section -->
+        <section class="help-card">
+
+
+            <h2>
+                Need Help?
+            </h2>
+
+
+            <p>
+                For account-related assistance, contact the township office.
+            </p>
+
+
+            <a href="emergency.html" class="help-btn">
+                View Contacts
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            TownCare &copy; 2026 | Samudra Township
+        </p>
+
+    </footer>
+
+
+    <script src="../js/profile.js"></script>
+
+</body>
+
+</html>
