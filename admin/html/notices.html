@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Notice Board - TownCare</title>
+
+  <link rel="stylesheet" href="../css/notices.css" />
+
+</head>
+
+
+<body>
+
+
+  <!-- ==========================================
+       Sidebar Menu
+       ========================================== -->
+
+  <input type="checkbox" id="sidebarToggle" class="sidebar-toggle" />
+
+
+  <!-- Menu Button -->
+
+  <label for="sidebarToggle" class="menu-button" aria-label="Open navigation menu">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </label>
+
+
+  <!-- Overlay -->
+
+  <label for="sidebarToggle" class="sidebar-overlay" aria-label="Close navigation menu"></label>
+
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar" aria-label="TownCare admin navigation">
+
+    <div class="sidebar-header">
+
+      <div class="sidebar-logo">
+        TownCare
+      </div>
+
+
+      <label for="sidebarToggle" class="sidebar-close" aria-label="Close navigation menu">
+        &times;
+      </label>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+
+      <!-- Dashboard -->
+
+      <a href="dashboard.html" class="sidebar-link">
+
+        <span class="sidebar-icon">
+          ⌂
+        </span>
+
+        <span>
+          Dashboard
+        </span>
+
+      </a>
+
+
+      <!-- Residents -->
+
+      <a href="residents.html" class="sidebar-link">
+
+        <span class="sidebar-icon">
+          👥
+        </span>
+
+        <span>
+          Residents
+        </span>
+
+      </a>
+
+
+      <!-- Complaints -->
+
+      <a href="complaints.html" class="sidebar-link">
+
+        <span class="sidebar-icon">
+          🔧
+        </span>
+
+        <span>
+          Complaints & Services
+        </span>
+
+      </a>
+
+
+      <!-- Bills -->
+
+      <a href="bills.html" class="sidebar-link">
+
+        <span class="sidebar-icon">
+          ₹
+        </span>
+
+        <span>
+          Bills
+        </span>
+
+      </a>
+
+
+      <!-- Notices -->
+
+      <a href="notices.html" class="sidebar-link active">
+
+        <span class="sidebar-icon">
+          📢
+        </span>
+
+        <span>
+          Notice Board
+        </span>
+
+      </a>
+
+
+      <!-- Logout -->
+
+      <a href="#" class="sidebar-link" id="logoutLink">
+
+        <span class="sidebar-icon">
+          ↪
+        </span>
+
+        <span>
+          Logout
+        </span>
+
+      </a>
+
+
+    </nav>
+
+  </aside>
+
+
+  <!-- ==========================================
+       Navbar
+       ========================================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      TownCare
+    </div>
+
+
+    <div class="nav-right">
+
+      <a href="dashboard.html" class="home-button">
+        Dashboard
+      </a>
+
+
+      <div class="profile-button" id="adminInitials"></div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ==========================================
+       Main Content
+       ========================================== -->
+
+  <main class="container">
+
+
+    <!-- ========================================
+         Page Header
+         ======================================== -->
+
+    <section class="page-header">
+
+      <div>
+
+        <h1>
+          Notice Board
+        </h1>
+
+        <p>
+          Publish and manage important township announcements.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Notice Statistics
+         ======================================== -->
+
+    <section class="stats-grid">
+
+
+      <!-- Total Notices -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          📢
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Total Notices
+          </div>
+
+          <div class="stat-value" id="totalNotices">
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Recent Notices -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          📝
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Recent Notices
+          </div>
+
+          <div class="stat-value" id="recentNotices">
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Categories -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🗂
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Categories
+          </div>
+
+          <div class="stat-value" id="noticeCategories">
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Latest Date -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🕐
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Latest Published
+          </div>
+
+          <div class="stat-value stat-date" id="latestNoticeDate">
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ========================================
+         Create Notice
+         ======================================== -->
+
+    <section class="notice-form-panel">
+
+
+      <div class="panel-header">
+
+        <div>
+
+          <h2 id="formTitle">
+            Publish New Notice
+          </h2>
+
+          <p>
+            Create a notice that will be visible to township residents.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Form Error -->
+
+      <div id="formErrorMessage" class="error-message" role="alert"></div>
+
+
+      <!-- Form Success -->
+
+      <div id="formSuccessMessage" class="success-message" role="status"></div>
+
+
+      <form id="noticeForm" novalidate>
+
+        <input type="hidden" id="noticeId" />
+
+
+        <div class="form-grid">
+
+
+          <!-- Title -->
+
+          <div class="form-group full-width">
+
+            <label for="noticeTitle">
+              Notice Title
+            </label>
+
+            <input type="text" id="noticeTitle" name="noticeTitle" placeholder="Enter notice title" maxlength="150"
+              autocomplete="off" required />
+
+          </div>
+
+
+          <!-- Category -->
+
+          <div class="form-group">
+
+            <label for="noticeCategory">
+              Category
+            </label>
+
+            <select id="noticeCategory" name="noticeCategory" required>
+
+              <option value="" disabled selected>
+                Select category
+              </option>
+
+              <option value="Important">
+                Important
+              </option>
+
+              <option value="Maintenance">
+                Maintenance
+              </option>
+
+              <option value="Community">
+                Community
+              </option>
+
+              <option value="Security">
+                Security
+              </option>
+
+              <option value="Event">
+                Event
+              </option>
+
+              <option value="General">
+                General
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- Description -->
+
+          <div class="form-group full-width">
+
+            <label for="noticeDescription">
+              Description
+            </label>
+
+            <textarea id="noticeDescription" name="noticeDescription" placeholder="Enter notice details"
+              maxlength="2000" required></textarea>
+
+          </div>
+
+          <!-- Attachment -->
+
+          <div class="form-group full-width">
+
+            <label for="noticeAttachment">
+              Attachment
+            </label>
+
+            <input type="file" id="noticeAttachment" name="noticeAttachment" accept=".pdf,.jpg,.jpeg,.png,.webp" />
+
+            <small>
+              Optional. Allowed: PDF, JPG, JPEG, PNG, WEBP.
+            </small>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="form-actions">
+
+          <button type="submit" class="primary-button" id="saveNoticeButton">
+            Publish Notice
+          </button>
+
+
+          <button type="button" class="secondary-button" id="cancelEditButton" hidden>
+            Cancel Edit
+          </button>
+
+        </div>
+
+
+      </form>
+
+    </section>
+
+
+    <!-- ========================================
+         Notice Management
+         ======================================== -->
+
+    <section class="notices-panel">
+
+
+      <div class="panel-header">
+
+        <div>
+
+          <h2>
+            Published Notices
+          </h2>
+
+          <p>
+            View, edit and remove township announcements.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================
+           Search + Category Filter
+           ====================================== -->
+
+      <div class="filter-bar">
+
+
+        <div class="search-box">
+
+          <label for="noticeSearch" class="sr-only">
+            Search Notices
+          </label>
+
+          <input type="search" id="noticeSearch" placeholder="Search by title, category or description"
+            autocomplete="off" />
+
+        </div>
+
+
+        <div class="filter-box">
+
+          <label for="categoryFilter" class="sr-only">
+            Filter by Category
+          </label>
+
+          <select id="categoryFilter">
+
+            <option value="all">
+              All Categories
+            </option>
+
+          </select>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- ======================================
+           List Messages
+           ====================================== -->
+
+      <div id="listErrorMessage" class="error-message" role="alert"></div>
+
+
+      <div id="listSuccessMessage" class="success-message" role="status"></div>
+
+
+      <!-- ======================================
+           Notice List
+           ====================================== -->
+
+      <div class="notice-list" id="noticeList">
+
+        <div class="loading-state">
+          Loading notices...
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ==========================================
+       Footer
+       ========================================== -->
+
+  <footer>
+
+    <p>
+      TownCare &copy; 2026 | Samudra Township
+    </p>
+
+  </footer>
+
+
+  <!-- ==========================================
+       JavaScript
+       ========================================== -->
+
+  <script src="../js/notices.js"></script>
+
+</body>
+
+</html>
