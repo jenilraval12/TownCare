@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bills - TownCare</title>
+
+    <link rel="stylesheet" href="../css/bills.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Sidebar Menu -->
+    <input type="checkbox" id="sidebarToggle" class="sidebar-toggle" />
+
+
+    <!-- Three Line Menu Button -->
+    <label for="sidebarToggle" class="menu-button" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+
+    <!-- Sidebar Overlay -->
+    <label for="sidebarToggle" class="sidebar-overlay" aria-label="Close navigation menu"></label>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="TownCare navigation">
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+                TownCare
+            </div>
+
+
+            <label for="sidebarToggle" class="sidebar-close" aria-label="Close navigation menu">
+                &times;
+            </label>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <a href="home.html" class="sidebar-link">
+                <span class="sidebar-icon">⌂</span>
+                <span>Home</span>
+            </a>
+
+
+            <a href="notices.html" class="sidebar-link">
+                <span class="sidebar-icon">📢</span>
+                <span>Notice Board</span>
+            </a>
+
+
+            <a href="visitors.html" class="sidebar-link">
+                <span class="sidebar-icon">👤</span>
+                <span>Visitors</span>
+            </a>
+
+
+            <a href="complaints.html" class="sidebar-link">
+                <span class="sidebar-icon">🔧</span>
+                <span>Complaints & Services</span>
+            </a>
+
+
+            <a href="bills.html" class="sidebar-link active">
+                <span class="sidebar-icon">₹</span>
+                <span>My Bills</span>
+            </a>
+
+
+            <a href="lost-found.html" class="sidebar-link">
+                <span class="sidebar-icon">🔎</span>
+                <span>Lost & Found</span>
+            </a>
+
+
+            <a href="emergency.html" class="sidebar-link">
+                <span class="sidebar-icon">🚨</span>
+                <span>Emergency Numbers</span>
+            </a>
+
+
+            <a href="profile.html" class="sidebar-link">
+                <span class="sidebar-icon">◉</span>
+                <span>Profile</span>
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            TownCare
+        </div>
+
+
+        <div class="nav-right">
+
+            <a href="home.html" class="home-button">
+                Home
+            </a>
+
+
+            <a href="profile.html" class="profile-button">
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+
+        <!-- Page Header -->
+        <section class="page-header">
+
+            <div>
+
+                <h1>
+                    My Bills
+                </h1>
+
+                <p>
+                    View your current maintenance bill and
+                    previous payment records.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Current Bill -->
+        <section class="current-bill-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Current Bill
+                    </h2>
+
+                    <p>
+                        Your latest maintenance bill.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="current-bill-card">
+
+
+                <div class="current-bill-main">
+
+                    <div class="bill-month-label" id="currentBillType">
+                    </div>
+
+                    <h2 id="currentBillMonth">
+                    </h2>
+
+                    <div class="bill-amount" id="currentBillAmount">
+                    </div>
+
+                </div>
+
+
+                <div class="current-bill-details">
+
+
+                    <div class="bill-detail">
+
+                        <span>
+                            House Number
+                        </span>
+
+                        <strong id="currentBillHouse">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bill-detail">
+
+                        <span>
+                            Due Date
+                        </span>
+
+                        <strong id="currentBillDueDate">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bill-detail">
+
+                        <span>
+                            Billing Month
+                        </span>
+
+                        <strong id="currentBillingMonth">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bill-detail">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <span class="bill-status pending" id="currentBillStatus">
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Payment History -->
+        <section class="payment-history-section">
+
+
+            <div class="section-heading history-heading">
+
+                <div>
+
+                    <h2>
+                        Payment History
+                    </h2>
+
+                    <p>
+                        View your previous maintenance bill records.
+                    </p>
+
+                </div>
+
+
+                <div class="year-filter">
+
+                    <label for="yearFilter">
+                        Year
+                    </label>
+
+                    <select id="yearFilter">
+
+                        <option value="all">
+                            All Years
+                        </option>
+
+                        <option value="2026">
+                            2026
+                        </option>
+
+                        <option value="2025">
+                            2025
+                        </option>
+
+                        <option value="2024">
+                            2024
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="payment-list" id="paymentList">
+            </div>
+
+
+            <div class="no-payments" id="noPayments">
+
+                <h3>
+                    No Payment Records
+                </h3>
+
+                <p>
+                    Your payment records will appear here.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- Payment Details Modal -->
+        <div class="modal" id="billModal">
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <div class="modal-label">
+                            BILL DETAILS
+                        </div>
+
+                        <h2 id="modalBillMonth">
+                        </h2>
+
+                    </div>
+
+
+                    <button type="button" class="close-button" id="closeBillModal">
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <div class="modal-details">
+
+
+                    <div class="modal-detail">
+
+                        <span>
+                            House Number
+                        </span>
+
+                        <strong id="modalHouseNumber">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="modal-detail">
+
+                        <span>
+                            Bill Amount
+                        </span>
+
+                        <strong id="modalBillAmount">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="modal-detail">
+
+                        <span>
+                            Due Date
+                        </span>
+
+                        <strong id="modalDueDate">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="modal-detail">
+
+                        <span>
+                            Payment Date
+                        </span>
+
+                        <strong id="modalPaymentDate">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="modal-detail">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <span class="bill-status" id="modalBillStatus">
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="modal-note">
+
+                    <p>
+                        This page displays payment status and
+                        billing records only.
+                    </p>
+
+                </div>
+
+
+                <button type="button" class="close-modal-button" id="closeBillButton">
+                    Close
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            TownCare &copy; 2026 | Samudra Township
+        </p>
+
+    </footer>
+
+
+    <script src="../js/bills.js"></script>
+
+</body>
+
+</html>
