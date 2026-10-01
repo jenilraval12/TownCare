@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Residents - TownCare</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/residents.css"
+  />
+
+</head>
+
+
+<body>
+
+
+  <!-- ==========================================
+       Sidebar Menu
+       ========================================== -->
+
+  <input
+    type="checkbox"
+    id="sidebarToggle"
+    class="sidebar-toggle"
+  />
+
+
+  <!-- Menu Button -->
+
+  <label
+    for="sidebarToggle"
+    class="menu-button"
+    aria-label="Open navigation menu"
+  >
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </label>
+
+
+  <!-- Overlay -->
+
+  <label
+    for="sidebarToggle"
+    class="sidebar-overlay"
+    aria-label="Close navigation menu"
+  ></label>
+
+
+  <!-- Sidebar -->
+
+  <aside
+    class="sidebar"
+    aria-label="TownCare admin navigation"
+  >
+
+    <div class="sidebar-header">
+
+      <div class="sidebar-logo">
+        TownCare
+      </div>
+
+
+      <label
+        for="sidebarToggle"
+        class="sidebar-close"
+        aria-label="Close navigation menu"
+      >
+        &times;
+      </label>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+
+      <!-- Dashboard -->
+
+      <a
+        href="dashboard.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          ⌂
+        </span>
+
+        <span>
+          Dashboard
+        </span>
+
+      </a>
+
+
+      <!-- Residents -->
+
+      <a
+        href="residents.html"
+        class="sidebar-link active"
+      >
+
+        <span class="sidebar-icon">
+          👥
+        </span>
+
+        <span>
+          Residents
+        </span>
+
+      </a>
+
+
+      <!-- Complaints -->
+
+      <a
+        href="complaints.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          🔧
+        </span>
+
+        <span>
+          Complaints & Services
+        </span>
+
+      </a>
+
+
+      <!-- Bills -->
+
+      <a
+        href="bills.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          ₹
+        </span>
+
+        <span>
+          Bills
+        </span>
+
+      </a>
+
+
+      <!-- Notices -->
+
+      <a
+        href="notices.html"
+        class="sidebar-link"
+      >
+
+        <span class="sidebar-icon">
+          📢
+        </span>
+
+        <span>
+          Notice Board
+        </span>
+
+      </a>
+
+
+      <!-- Logout -->
+
+      <a
+        href="#"
+        class="sidebar-link"
+        id="logoutLink"
+      >
+
+        <span class="sidebar-icon">
+          ↪
+        </span>
+
+        <span>
+          Logout
+        </span>
+
+      </a>
+
+
+    </nav>
+
+  </aside>
+
+
+  <!-- ==========================================
+       Navbar
+       ========================================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      TownCare
+    </div>
+
+
+    <div class="nav-right">
+
+      <a
+        href="dashboard.html"
+        class="home-button"
+      >
+        Dashboard
+      </a>
+
+
+      <div
+        class="profile-button"
+        id="adminInitials"
+      ></div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ==========================================
+       Main Content
+       ========================================== -->
+
+  <main class="container">
+
+
+    <!-- ========================================
+         Page Header
+         ======================================== -->
+
+    <section class="page-header">
+
+      <div>
+
+        <h1>
+          Residents
+        </h1>
+
+        <p>
+          Manage resident accounts and registration requests.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Resident Statistics
+         ======================================== -->
+
+    <section class="stats-grid">
+
+
+      <!-- Total Residents -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          👥
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Total Residents
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalResidents"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Pending -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🕐
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Pending Registrations
+          </div>
+
+          <div
+            class="stat-value"
+            id="pendingResidents"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Approved -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ✓
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Approved Residents
+          </div>
+
+          <div
+            class="stat-value"
+            id="approvedResidents"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Rejected -->
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ✕
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Rejected
+          </div>
+
+          <div
+            class="stat-value"
+            id="rejectedResidents"
+          >
+            ...
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ========================================
+         Resident Management Panel
+         ======================================== -->
+
+    <section class="resident-panel">
+
+
+      <!-- Panel Header -->
+
+      <div class="panel-header">
+
+        <div>
+
+          <h2>
+            Resident Accounts
+          </h2>
+
+          <p>
+            View and manage township resident accounts.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================
+           Search and Filter
+           ====================================== -->
+
+      <div class="filter-bar">
+
+
+        <div class="search-box">
+
+          <label
+            for="residentSearch"
+            class="sr-only"
+          >
+            Search Residents
+          </label>
+
+          <input
+            type="search"
+            id="residentSearch"
+            placeholder="Search by name, house number or mobile number"
+            autocomplete="off"
+          />
+
+        </div>
+
+
+        <div class="filter-box">
+
+          <label
+            for="statusFilter"
+            class="sr-only"
+          >
+            Filter by Status
+          </label>
+
+          <select
+            id="statusFilter"
+          >
+
+            <option value="all">
+              All Status
+            </option>
+
+            <option value="pending">
+              Pending
+            </option>
+
+            <option value="approved">
+              Approved
+            </option>
+
+            <option value="rejected">
+              Rejected
+            </option>
+
+          </select>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- ======================================
+           Error Message
+           ====================================== -->
+
+      <div
+        id="errorMessage"
+        class="error-message"
+        role="alert"
+      ></div>
+
+
+      <!-- ======================================
+           Success Message
+           ====================================== -->
+
+      <div
+        id="successMessage"
+        class="success-message"
+        role="status"
+      ></div>
+
+
+      <!-- ======================================
+           Resident List
+           ====================================== -->
+
+      <div
+        class="resident-list"
+        id="residentList"
+      >
+
+        <div class="loading-state">
+          Loading residents...
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ==========================================
+       Footer
+       ========================================== -->
+
+  <footer>
+
+    <p>
+      TownCare &copy; 2026 | Samudra Township
+    </p>
+
+  </footer>
+
+
+  <!-- ==========================================
+       JavaScript
+       ========================================== -->
+
+  <script src="../js/residents.js"></script>
+
+</body>
+
+</html>
