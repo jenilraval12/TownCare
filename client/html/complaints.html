@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complaints & Services - TownCare</title>
+
+    <link rel="stylesheet" href="../css/complaints.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Sidebar Menu -->
+    <input
+        type="checkbox"
+        id="sidebarToggle"
+        class="sidebar-toggle"
+    />
+
+
+    <!-- Three Line Menu Button -->
+    <label
+        for="sidebarToggle"
+        class="menu-button"
+        aria-label="Open navigation menu"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+
+    <!-- Sidebar Overlay -->
+    <label
+        for="sidebarToggle"
+        class="sidebar-overlay"
+        aria-label="Close navigation menu"
+    ></label>
+
+
+    <!-- Sidebar -->
+    <aside
+        class="sidebar"
+        aria-label="TownCare navigation"
+    >
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+                TownCare
+            </div>
+
+            <label
+                for="sidebarToggle"
+                class="sidebar-close"
+                aria-label="Close navigation menu"
+            >
+                &times;
+            </label>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <a
+                href="home.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">⌂</span>
+                <span>Home</span>
+            </a>
+
+
+            <a
+                href="notices.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">📢</span>
+                <span>Notice Board</span>
+            </a>
+
+
+            <a
+                href="visitors.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">👤</span>
+                <span>Visitors</span>
+            </a>
+
+
+            <a
+                href="complaints.html"
+                class="sidebar-link active"
+            >
+                <span class="sidebar-icon">🔧</span>
+                <span>Complaints & Services</span>
+            </a>
+
+
+            <a
+                href="bills.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">₹</span>
+                <span>My Bills</span>
+            </a>
+
+
+            <a
+                href="lost-found.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">🔎</span>
+                <span>Lost & Found</span>
+            </a>
+
+
+            <a
+                href="emergency.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">🚨</span>
+                <span>Emergency Numbers</span>
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">◉</span>
+                <span>Profile</span>
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            TownCare
+        </div>
+
+
+        <div class="nav-right">
+
+            <a
+                href="home.html"
+                class="home-button"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="profile-button"
+            >
+                JR
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+
+        <!-- Page Header -->
+        <section class="page-header">
+
+            <div>
+
+                <h1>
+                    Complaints & Services
+                </h1>
+
+                <p>
+                    Raise a complaint or request a township service
+                    whenever you need assistance.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="new-complaint-button"
+                id="newComplaintButton"
+            >
+
+                <span class="add-icon">
+                    +
+                </span>
+
+                New Complaint
+
+            </button>
+
+        </section>
+
+
+        <!-- Complaint Form -->
+        <section
+            class="complaint-form-section"
+            id="complaintFormSection"
+        >
+
+            <div class="section-heading">
+
+                <h2>
+                    Raise a Complaint
+                </h2>
+
+                <p>
+                    Provide the details below so the township administration
+                    can assist you.
+                </p>
+
+            </div>
+
+
+            <form id="complaintForm">
+
+
+                <div class="form-grid">
+
+
+                    <!-- Category -->
+                    <div class="form-group">
+
+                        <label for="complaintCategory">
+                            Complaint Category
+                        </label>
+
+                        <select
+                            id="complaintCategory"
+                            name="category"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                disabled
+                                selected
+                            >
+                                Select complaint category
+                            </option>
+
+                            <option value="Electrician">
+                                Electrician
+                            </option>
+
+                            <option value="Plumber">
+                                Plumber
+                            </option>
+
+                            <option value="Carpenter">
+                                Carpenter
+                            </option>
+
+                            <option value="Garbage Picker">
+                                Garbage Picker
+                            </option>
+
+                            <option value="Street Light">
+                                Street Light
+                            </option>
+
+                            <option value="Garbage / Waste">
+                                Garbage / Waste
+                            </option>
+
+                            <option value="Bushes / Garden">
+                                Bushes / Garden
+                            </option>
+
+                            <option value="Drainage">
+                                Drainage
+                            </option>
+
+                            <option value="Water">
+                                Water
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Location -->
+                    <div class="form-group">
+
+                        <label for="complaintLocation">
+                            Location
+                        </label>
+
+                        <select
+                            id="complaintLocation"
+                            name="location"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                disabled
+                                selected
+                            >
+                                Select complaint location
+                            </option>
+
+                            <option value="My House">
+                                My House
+                            </option>
+
+                            <option value="Block A">
+                                Block A
+                            </option>
+
+                            <option value="Block B">
+                                Block B
+                            </option>
+
+                            <option value="Community Hall">
+                                Community Hall
+                            </option>
+
+                            <option value="Clubhouse">
+                                Clubhouse
+                            </option>
+
+                            <option value="Garden / Park">
+                                Garden / Park
+                            </option>
+
+                            <option value="Parking Area">
+                                Parking Area
+                            </option>
+
+                            <option value="Main Road">
+                                Main Road
+                            </option>
+
+                            <option value="Play Area">
+                                Play Area
+                            </option>
+
+                            <option value="Security Gate">
+                                Security Gate
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Other Location -->
+                    <div
+                        class="form-group full-width"
+                        id="otherLocationGroup"
+                        style="display: none;"
+                    >
+
+                        <label for="otherLocation">
+                            Specify Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="otherLocation"
+                            name="otherLocation"
+                            placeholder="Enter the location"
+                        >
+
+                    </div>
+
+
+                    <!-- Description -->
+                    <div class="form-group full-width">
+
+                        <label for="complaintDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="complaintDescription"
+                            name="description"
+                            rows="6"
+                            placeholder="Describe your problem in detail..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Photo -->
+                    <div class="form-group full-width">
+
+                        <label for="complaintPhoto">
+                            Photo
+                        </label>
+
+                        <input
+                            type="file"
+                            id="complaintPhoto"
+                            name="photo"
+                            accept="image/*"
+                        >
+
+                        <small>
+                            Upload one photo related to your complaint.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Photo Preview -->
+                <div
+                    class="photo-preview-section"
+                    id="photoPreviewSection"
+                    style="display: none;"
+                >
+
+                    <p class="preview-title">
+                        Photo Preview
+                    </p>
+
+                    <img
+                        id="photoPreview"
+                        class="photo-preview"
+                        alt="Complaint photo preview"
+                    >
+
+                </div>
+
+
+                <!-- Form Message -->
+                <div
+                    class="form-message"
+                    id="formMessage"
+                >
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-button"
+                        id="cancelComplaintButton"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        Submit Complaint
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- My Complaints -->
+        <section class="my-complaints">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        My Complaints
+                    </h2>
+
+                    <p>
+                        Track the complaints and service requests you have submitted.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="complaint-list"
+                id="complaintList"
+            >
+            </div>
+
+
+            <div
+                class="no-complaints"
+                id="noComplaints"
+            >
+
+                <h3>
+                    No Complaints Yet
+                </h3>
+
+                <p>
+                    Your submitted complaints will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Complaint Details Modal -->
+    <div
+        class="modal"
+        id="complaintModal"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <div
+                        class="complaint-id"
+                        id="modalComplaintId"
+                    >
+                    </div>
+
+                    <h2 id="modalComplaintTitle">
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-button"
+                    id="closeComplaintModal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-status-row">
+
+                <span class="modal-status-label">
+                    Status
+                </span>
+
+                <span
+                    class="complaint-status"
+                    id="modalStatus"
+                >
+                </span>
+
+            </div>
+
+
+            <div class="modal-details">
+
+
+                <div class="modal-detail">
+
+                    <span>
+                        Category
+                    </span>
+
+                    <strong id="modalCategory">
+                    </strong>
+
+                </div>
+
+
+                <div class="modal-detail">
+
+                    <span>
+                        Location
+                    </span>
+
+                    <strong id="modalLocation">
+                    </strong>
+
+                </div>
+
+
+                <div class="modal-detail">
+
+                    <span>
+                        Submitted
+                    </span>
+
+                    <strong id="modalDate">
+                    </strong>
+
+                </div>
+
+
+                <div class="modal-detail">
+
+                    <span>
+                        Service Provider
+                    </span>
+
+                    <strong id="modalProvider">
+                    </strong>
+
+                    <small id="modalProviderPhone">
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-description">
+
+                <h3>
+                    Description
+                </h3>
+
+                <p id="modalDescription">
+                </p>
+
+            </div>
+
+
+            <div
+                class="modal-photo-section"
+                id="modalPhotoSection"
+                style="display: none;"
+            >
+
+                <h3>
+                    Complaint Photo
+                </h3>
+
+                <img
+                    id="modalPhoto"
+                    alt="Complaint photo"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                class="close-modal-button"
+                id="closeComplaintButton"
+            >
+                Close
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            TownCare &copy; 2026 | Samudra Township
+        </p>
+
+    </footer>
+
+
+    <script src="../js/complaints.js"></script>
+
+</body>
+
+</html>
