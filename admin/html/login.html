@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Admin Login - TownCare</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/login.css"
+  />
+
+</head>
+
+
+<body>
+
+  <div class="login-container">
+
+
+    <!-- Left Section -->
+    <div class="left-section">
+
+      <div class="logo">
+        TownCare
+      </div>
+
+
+      <h2>
+        Samudra Township, Connected.
+      </h2>
+
+
+      <p>
+        Manage residents, complaints, maintenance bills,
+        notices and township services from one place.
+      </p>
+
+
+      <div class="town-image">
+
+        <img
+          src="../../images/client-login-image.jpg"
+          alt="Samudra Township"
+        />
+
+      </div>
+
+    </div>
+
+
+    <!-- Right Section -->
+    <div class="right-section">
+
+
+      <h1>
+        Admin Login
+      </h1>
+
+
+      <p class="welcome-text">
+        Login to your TownCare administration account
+      </p>
+
+
+      <!-- Error Message -->
+      <div
+        class="error-message"
+        id="errorMessage"
+      ></div>
+
+
+      <!-- Admin Login Form -->
+      <form id="adminLoginForm">
+
+
+        <!-- Mobile Number -->
+        <div class="form-group">
+
+          <label for="phoneNumber">
+            Mobile Number
+          </label>
+
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            placeholder="Enter your mobile number"
+            maxlength="10"
+            inputmode="numeric"
+            autocomplete="tel"
+            required
+          />
+
+        </div>
+
+
+        <!-- Password -->
+        <div class="form-group">
+
+          <label for="password">
+            Password
+          </label>
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          />
+
+        </div>
+
+
+        <!-- Login Button -->
+        <button
+          type="submit"
+          class="login-btn"
+        >
+          Login
+        </button>
+
+      </form>
+
+
+      <div class="divider">
+        OR
+      </div>
+
+
+      <p class="register-text">
+
+        Resident?
+
+        <a href="../../client/html/login.html">
+          Resident Login
+        </a>
+
+      </p>
+
+
+    </div>
+
+  </div>
+
+
+  <script src="../js/login.js"></script>
+
+</body>
+
+</html>
