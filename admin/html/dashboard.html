@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Admin Dashboard - TownCare</title>
+
+  <link rel="stylesheet" href="../css/dashboard.css" />
+
+</head>
+
+
+<body>
+
+
+  <!-- ==========================================
+       Sidebar Menu
+       ========================================== -->
+
+  <input type="checkbox" id="sidebarToggle" class="sidebar-toggle" />
+
+
+  <!-- Menu Button -->
+  <label for="sidebarToggle" class="menu-button" aria-label="Open navigation menu">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </label>
+
+
+  <!-- Overlay -->
+  <label for="sidebarToggle" class="sidebar-overlay" aria-label="Close navigation menu"></label>
+
+
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="TownCare admin navigation">
+
+    <div class="sidebar-header">
+
+      <div class="sidebar-logo">
+        TownCare
+      </div>
+
+
+      <label for="sidebarToggle" class="sidebar-close" aria-label="Close navigation menu">
+        &times;
+      </label>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+
+      <!-- Dashboard -->
+      <a href="dashboard.html" class="sidebar-link active">
+
+        <span class="sidebar-icon">
+          ⌂
+        </span>
+
+        <span>
+          Dashboard
+        </span>
+
+      </a>
+
+
+      <!-- Residents -->
+      <a href="residents.html" class="sidebar-link">
+
+        <span class="sidebar-icon">
+          👥
+        </span>
+
+        <span>
+          Residents
+        </span>
+
+      </a>
+
+      <!-- Visitors -->
+      <a href="visitors.html" class="sidebar-link">
+
+        <span class="sidebar-icon">
+          👤
+        </span>
+
+        <span>
+          Visitors
+        </span>
+
+      </a>
+
+      <!-- Complaints -->
+      <a href="complaints.html" class="sidebar-link">
+
+        <span class="sidebar-icon">
+          🔧
+        </span>
+
+        <span>
+          Complaints & Services
+        </span>
+
+      </a>
+
+
+      <!-- Bills -->
+      <a href="bills.html" class="sidebar-link">
+
+        <span class="sidebar-icon">
+          ₹
+        </span>
+
+        <span>
+          Bills
+        </span>
+
+      </a>
+
+
+      <!-- Notices -->
+      <a href="notices.html" class="sidebar-link">
+
+        <span class="sidebar-icon">
+          📢
+        </span>
+
+        <span>
+          Notice Board
+        </span>
+
+      </a>
+
+
+      <!-- Logout -->
+      <a href="#" class="sidebar-link" id="logoutLink">
+
+        <span class="sidebar-icon">
+          ↪
+        </span>
+
+        <span>
+          Logout
+        </span>
+
+      </a>
+
+
+    </nav>
+
+  </aside>
+
+
+  <!-- ==========================================
+       Navbar
+       ========================================== -->
+
+  <nav class="navbar">
+
+
+    <div class="logo">
+      TownCare
+    </div>
+
+
+    <div class="nav-right">
+
+
+      <!-- Dashboard Button -->
+      <a href="dashboard.html" class="home-button">
+        Dashboard
+      </a>
+
+
+      <!-- Admin Profile -->
+      <div class="profile-button" id="adminInitials"></div>
+
+
+    </div>
+
+  </nav>
+
+
+  <!-- ==========================================
+       Main Content
+       ========================================== -->
+
+  <main class="container">
+
+
+    <!-- ========================================
+         Welcome Section
+         ======================================== -->
+
+    <section class="welcome-section">
+
+      <h1>
+        Welcome Back,
+        <span id="adminName"></span>
+      </h1>
+
+
+      <p>
+        TownCare Administration
+        &nbsp;|&nbsp;
+        Samudra Township
+      </p>
+
+    </section>
+
+
+    <!-- ========================================
+         Statistics
+         ======================================== -->
+
+    <section class="stats-grid">
+
+
+      <!-- Total Residents -->
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          👥
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Total Residents
+          </div>
+
+          <div class="stat-value" id="totalResidents"></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Pending Registrations -->
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🕐
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Pending Registrations
+          </div>
+
+          <div class="stat-value" id="pendingRegistrations"></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Active Complaints -->
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🔧
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Active Complaints
+          </div>
+
+          <div class="stat-value" id="activeComplaints"></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Pending Bills -->
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ₹
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-label">
+            Pending Bills
+          </div>
+
+          <div class="stat-value" id="pendingBills"></div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ========================================
+         Quick Access
+         ======================================== -->
+
+    <section>
+
+      <h2 class="section-title">
+        Quick Access
+      </h2>
+
+
+      <div class="quick-grid">
+
+
+        <!-- Residents -->
+        <a href="residents.html" class="quick-card">
+
+          <div class="quick-icon">
+            👥
+          </div>
+
+          <h3>
+            Residents
+          </h3>
+
+          <p>
+            Manage resident accounts and registration requests.
+          </p>
+
+        </a>
+
+        <!-- Visitors -->
+        <a href="visitors.html" class="quick-card">
+
+          <div class="quick-icon">
+            👤
+          </div>
+
+          <h3>
+            Visitors
+          </h3>
+
+          <p>
+            Monitor visitor invitations and manage township entry.
+          </p>
+
+        </a>
+
+        <!-- Complaints -->
+        <a href="complaints.html" class="quick-card">
+
+          <div class="quick-icon">
+            🔧
+          </div>
+
+          <h3>
+            Complaints & Services
+          </h3>
+
+          <p>
+            Review complaints and assign service providers.
+          </p>
+
+        </a>
+
+
+        <!-- Bills -->
+        <a href="bills.html" class="quick-card">
+
+          <div class="quick-icon">
+            ₹
+          </div>
+
+          <h3>
+            Bills
+          </h3>
+
+          <p>
+            Create and manage resident maintenance bills.
+          </p>
+
+        </a>
+
+
+        <!-- Notices -->
+        <a href="notices.html" class="quick-card">
+
+          <div class="quick-icon">
+            📢
+          </div>
+
+          <h3>
+            Notice Board
+          </h3>
+
+          <p>
+            Publish and manage township announcements.
+          </p>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Dashboard Panels
+         ======================================== -->
+
+    <section class="dashboard-grid">
+
+
+      <!-- ======================================
+           Recent Complaints
+           ====================================== -->
+
+      <div class="panel">
+
+        <div class="panel-header">
+
+          <h2>
+            Recent Complaints
+          </h2>
+
+          <a href="complaints.html" class="view-all">
+            View All
+          </a>
+
+        </div>
+
+
+        <div id="recentComplaints"></div>
+
+      </div>
+
+
+      <!-- ======================================
+           Pending Registrations
+           ====================================== -->
+
+      <div class="panel">
+
+        <div class="panel-header">
+
+          <h2>
+            Pending Registrations
+          </h2>
+
+          <a href="residents.html" class="view-all">
+            View All
+          </a>
+
+        </div>
+
+
+        <div id="pendingResidents"></div>
+
+      </div>
+
+      <!-- ======================================
+     Recent Visitors
+     ====================================== -->
+
+      <div class="panel">
+
+        <div class="panel-header">
+
+          <h2>
+            Recent Visitors
+          </h2>
+
+          <a href="visitors.html" class="view-all">
+            View All
+          </a>
+
+        </div>
+
+        <div id="recentVisitors"></div>
+
+      </div>
+
+      <!-- ======================================
+           Recent Bills
+           ====================================== -->
+
+      <div class="panel">
+
+        <div class="panel-header">
+
+          <h2>
+            Recent Bills
+          </h2>
+
+          <a href="bills.html" class="view-all">
+            View All
+          </a>
+
+        </div>
+
+
+        <div id="recentBills"></div>
+
+      </div>
+
+
+      <!-- ======================================
+           Latest Notices
+           ====================================== -->
+
+      <div class="panel">
+
+        <div class="panel-header">
+
+          <h2>
+            Latest Notices
+          </h2>
+
+          <a href="notices.html" class="view-all">
+            View All
+          </a>
+
+        </div>
+
+
+        <div id="latestNotices"></div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ========================================
+         Administration Information
+         ======================================== -->
+
+    <section class="admin-info-card">
+
+      <div>
+
+        <h2>
+          TownCare Administration
+        </h2>
+
+        <p>
+          Manage residents, services, bills and
+          township announcements from the administration panel.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ==========================================
+       Footer
+       ========================================== -->
+
+  <footer>
+
+    <p>
+      TownCare &copy; 2026 | Samudra Township
+    </p>
+
+  </footer>
+
+
+  <!-- ==========================================
+       JavaScript
+       ========================================== -->
+
+  <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>
