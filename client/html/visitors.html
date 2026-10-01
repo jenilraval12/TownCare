@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visitors - TownCare</title>
+
+    <link rel="stylesheet" href="../css/visitors.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Sidebar Menu -->
+    <input
+        type="checkbox"
+        id="sidebarToggle"
+        class="sidebar-toggle"
+    />
+
+
+    <!-- Three Line Menu Button -->
+    <label
+        for="sidebarToggle"
+        class="menu-button"
+        aria-label="Open navigation menu"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+
+    <!-- Sidebar Overlay -->
+    <label
+        for="sidebarToggle"
+        class="sidebar-overlay"
+        aria-label="Close navigation menu"
+    ></label>
+
+
+    <!-- Sidebar -->
+    <aside
+        class="sidebar"
+        aria-label="TownCare navigation"
+    >
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+                TownCare
+            </div>
+
+            <label
+                for="sidebarToggle"
+                class="sidebar-close"
+                aria-label="Close navigation menu"
+            >
+                &times;
+            </label>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <a
+                href="home.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">⌂</span>
+                <span>Home</span>
+            </a>
+
+
+            <a
+                href="notices.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">📢</span>
+                <span>Notice Board</span>
+            </a>
+
+
+            <a
+                href="visitors.html"
+                class="sidebar-link active"
+            >
+                <span class="sidebar-icon">👤</span>
+                <span>Visitors</span>
+            </a>
+
+
+            <a
+                href="complaints.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">🔧</span>
+                <span>Complaints & Services</span>
+            </a>
+
+
+            <a
+                href="bills.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">₹</span>
+                <span>My Bills</span>
+            </a>
+
+
+            <a
+                href="lost-found.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">🔎</span>
+                <span>Lost & Found</span>
+            </a>
+
+
+            <a
+                href="emergency.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">🚨</span>
+                <span>Emergency Numbers</span>
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="sidebar-link"
+            >
+                <span class="sidebar-icon">◉</span>
+                <span>Profile</span>
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            TownCare
+        </div>
+
+
+        <div class="nav-right">
+
+            <a
+                href="home.html"
+                class="home-button"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="profile-button"
+            >
+                JR
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+
+        <!-- Page Header -->
+        <section class="page-header">
+
+            <div>
+
+                <h1>
+                    Visitors
+                </h1>
+
+                <p>
+                    Manage your visitors and generate secure invitations
+                    for entry into Samudra Township.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="add-visitor-button"
+                id="addVisitorButton"
+            >
+
+                <span class="add-icon">
+                    +
+                </span>
+
+                Add Visitor
+
+            </button>
+
+        </section>
+
+
+        <!-- Active Invitation -->
+        <section
+            class="active-invitation"
+            id="activeInvitation"
+            style="display: none;"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Active Invitation
+                    </h2>
+
+                    <p>
+                        Your currently active visitor invitation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="invitation-card">
+
+
+                <div class="invitation-header">
+
+                    <div>
+
+                        <div class="invitation-label">
+                            INVITATION
+                        </div>
+
+                        <h2>
+                            You are invited at Samudra Township
+                        </h2>
+
+                    </div>
+
+                    <span class="invitation-status">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="invitation-details">
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Invited To
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="invitedTo"
+                        >
+                            Jenil Raval
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Invited By
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="invitedBy"
+                        >
+                            Jenil Raval - A-01/1
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Visiting Date
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="visitingDate"
+                        >
+                            28 Aug 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Expected Time
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="expectedTime"
+                        >
+                            06:00 PM
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="otp-section">
+
+                    <div>
+
+                        <div class="otp-label">
+                            Visitor OTP
+                        </div>
+
+                        <div
+                            class="otp-code"
+                            id="otpCode"
+                        >
+                            482731
+                        </div>
+
+                        <p>
+                            Share this OTP with your visitor.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="copy-button"
+                        id="copyOtpButton"
+                    >
+                        Copy OTP
+                    </button>
+
+                </div>
+
+
+                <div class="invitation-footer">
+
+                    <div>
+
+                        <span class="detail-label">
+                            Visitor
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="visitorName"
+                        >
+                            Rahul Patel
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="detail-label">
+                            Valid Till
+                        </span>
+
+                        <span
+                            class="detail-value"
+                            id="validTill"
+                        >
+                            10:00 PM
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Visitor Form -->
+        <section
+            class="visitor-form-section"
+            id="visitorFormSection"
+        >
+
+            <div class="section-heading">
+
+                <h2>
+                    Create Visitor Invitation
+                </h2>
+
+                <p>
+                    Enter your visitor's details to generate an invitation.
+                </p>
+
+            </div>
+
+
+            <form id="visitorForm">
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="visitorNameInput">
+                            Visitor Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="visitorNameInput"
+                            name="visitorName"
+                            placeholder="Enter visitor name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="visitorMobile">
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="visitorMobile"
+                            name="visitorMobile"
+                            placeholder="Enter mobile number"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="vehicleNumber">
+                            Vehicle Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="vehicleNumber"
+                            name="vehicleNumber"
+                            placeholder="Example: GJ-12-AB-1234"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="visitDate">
+                            Visit Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="visitDate"
+                            name="visitDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="expectedTime">
+                            Expected Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="expectedTimeInput"
+                            name="expectedTime"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="validTill">
+                            Valid Till
+                        </label>
+
+                        <input
+                            type="time"
+                            id="validTillInput"
+                            name="validTill"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="visitPurpose">
+                            Purpose
+                        </label>
+
+                        <select
+                            id="visitPurpose"
+                            name="purpose"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                disabled
+                                selected
+                            >
+                                Select visit purpose
+                            </option>
+
+                            <option value="personal">
+                                Personal Visit
+                            </option>
+
+                            <option value="family">
+                                Family Visit
+                            </option>
+
+                            <option value="delivery">
+                                Delivery
+                            </option>
+
+                            <option value="service">
+                                Service / Maintenance
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="form-message"
+                    id="formMessage"
+                >
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-button"
+                        id="cancelVisitorButton"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="generate-button"
+                    >
+                        Generate Invitation
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Visitor History -->
+        <section class="visitor-history">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Visitor History
+                    </h2>
+
+                    <p>
+                        View your previous visitor invitations.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="visitor-list"
+                id="visitorList"
+            >
+            </div>
+
+
+            <div
+                class="no-visitors"
+                id="noVisitors"
+            >
+
+                <h3>
+                    No Visitor Records
+                </h3>
+
+                <p>
+                    Your previous visitor invitations will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Invitation Modal -->
+    <div
+        class="modal"
+        id="invitationModal"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <div class="invitation-label">
+                        INVITATION
+                    </div>
+
+                    <h2>
+                        You are invited at Samudra Township
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-button"
+                    id="closeInvitationModal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="invitation-preview">
+
+
+                <div class="preview-row">
+
+                    <span>
+                        Invited To
+                    </span>
+
+                    <strong id="modalVisitorName">
+                        Rahul Patel
+                    </strong>
+
+                </div>
+
+
+                <div class="preview-row">
+
+                    <span>
+                        Invited By
+                    </span>
+
+                    <strong>
+                        Jenil Raval - A-01/1
+                    </strong>
+
+                </div>
+
+
+                <div class="preview-row">
+
+                    <span>
+                        Visiting Date & Time
+                    </span>
+
+                    <strong id="modalDateTime">
+                        28 Aug 2026, 06:00 PM
+                    </strong>
+
+                </div>
+
+
+                <div class="preview-row">
+
+                    <span>
+                        Valid Till
+                    </span>
+
+                    <strong id="modalValidTill">
+                        10:00 PM
+                    </strong>
+
+                </div>
+
+
+                <div class="modal-otp">
+
+                    <span>
+                        Visitor OTP
+                    </span>
+
+                    <strong id="modalOtp">
+                        482731
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                type="button"
+                class="close-modal-button"
+                id="closeInvitationButton"
+            >
+                Close
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            TownCare &copy; 2026 | Samudra Township
+        </p>
+
+    </footer>
+
+
+    <script src="../js/visitors.js"></script>
+
+</body>
+
+</html>
